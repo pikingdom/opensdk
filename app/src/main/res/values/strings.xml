@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">OpenSDK</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="open_mvp_loss_permission_tip">\t\t信息流需要提供以下权限才能正常运行哦！\n
+    </string>
+    <string name="card_activity">卡片式接入</string>
+    <string name="flow_activity">信息流接入</string>
+</resources>

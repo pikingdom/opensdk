@@ -1,0 +1,59 @@
+<RelativeLayout android:id="@+id/permission_loss_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:visibility="gone"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/permission_loss_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/open_mvp_loss_permission_tip" />
+
+
+    <LinearLayout
+        android:id="@+id/permission_loss_list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/permission_loss_title_tv"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/app_phone_id"
+            android:gravity="center_horizontal"
+            android:text="获取手机识别码" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/app_phone_location"
+            android:gravity="center_horizontal"
+            android:text="获取定位信息" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/app_phone_storage"
+            android:gravity="center_horizontal"
+            android:text="读写存储设备" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/open_permission_setting_btn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/permission_loss_list_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:onClick="openPermissionSetting"
+        android:text="打开权限" />
+</RelativeLayout>

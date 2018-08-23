@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 26
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.inveno.opensdk.android"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 16
+        versionName "1.0.15"
+    }
+    signingConfigs {
+        myConfig {
+            storeFile file("../keystore/open_sdk.jks")
+            storePassword "inveno.com.admin"
+            keyAlias "open_sdk"
+            keyPassword "inveno.com.admin"
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.myConfig
+            minifyEnabled false
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+            proguardFile 'proguard-project.txt'
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.myConfig
+        }
+    }
+    buildToolsVersion '26.0.2'
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    compile('com.gyf.barlibrary:barlibrary:2.3.0') {
+        exclude group: 'com.android.support'
+    }
+    compile(name: 'open_export-1.0.1.2', ext: 'aar')
+    //compile project(":open_export")
+//    compile project(":openmvp")
+//    compile project(":open_detail")
+}

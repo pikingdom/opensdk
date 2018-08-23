@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#673ab7"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context="com.inveno.opensdk.android.MainActivity">
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="16dp"
+        android:text="请选择接入方式"
+        android:textColor="@color/white"
+        android:textSize="22dp" />
+
+    <com.inveno.opensdk.android.ThumbnailView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:onClick="accessNewsFlow"
+        android:src="@mipmap/open_demo_flow_btn" />
+
+    <com.inveno.opensdk.android.ThumbnailView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="accessCardView"
+        android:src="@mipmap/open_demo_card_btn" />
+</LinearLayout>
